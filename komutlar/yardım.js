@@ -1,23 +1,31 @@
-const Discord = require('discord.js')
-exports.run = (client, message, args) => {
+const Discord = require("discord.js")
 
-  message.channel.send(
-    new Discord.RichEmbed()
-      .setColor('#000000')
-      .setTitle('Ödül')
-      .setURL('https://i.imgyukle.com/2020/05/16/rwHv9n.jpg')
-        .setDescription('**zFantaStrafe=minesaus\nRTC=MrsMyDarling\nG3NOS=TimeForce\nmehmetpro0101=DqrkOne\nShiezyS=MeliksahStrqfe\nBathneYT=AndreiTheGamer**')
-        .addField('Lonca Savaşları', 'Eşleşmeler')
-  )
+exports.run = async(client, message) => {
+	
+	let prefix = '!'
+
+	const codare = new Discord.RichEmbed()
+       .setColor("RANDOM")
+       .setAuthor(`Komutlar`)
+       .setTitle(`Eğlence Komutları`)
+       .setDescription(`!8ball:\nSorduğunuz Soruya Rastgele Cevap Verir. \n\n !adamasmaca:\nAdam Asmaca Oynarsınız.\n\n!canlıyardım:\nCanlı Destek Tablebi Oluşturur.\n\n!emojiyazı:\nMesajınızı emojiye çevirir.\n\n!pp:\nSunucu Resminin Linkini Atar.\n\n!söyle:\nYazdığınız mesajı sesli olarak söyler.\n\n!stersçarkı:\nSizin için bir stres çarkı çevirir.\n\n!yazıtura:\nYazı Tura Oynamanıza Yarar.\n\n!sayıtahmin:\nRastgele rakam belirler ve siz o rakamı bulmaya çalışırsınız.\n\n!myardım:\nMüzik Komutları.`)
+       
+  .setFooter(`Yapımcı @Hasan 14`)
+  return message.channel.send(codare)
 }
+
+
 
 exports.conf = {
   enabled: true,
-  guildOnly: true,
+  guildOnly: false,
   aliases: [],
-  permLevel: 0
-}
+  permLevel: 0,
+  kategori: `Geliştirici`
+};
 
 exports.help = {
-  name: 'yazı'
-}
+  name: 'yardım',
+  description: '[Admin Komutu]',
+  usage: '!bakım-mod aç'
+};
