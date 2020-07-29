@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
-
+if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu komutu kullanabilmek icin **Yonetici** iznine sahip olmalisin!`);
       
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()

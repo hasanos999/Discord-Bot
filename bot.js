@@ -541,7 +541,7 @@ client.on('message', msg => {
 ///
 
 client.on("message", msg => {
-  var dm = client.channels.get("710527757691519047"); //mesajın geleceği kanal idsi//
+  var dm = client.channels.get("724503610867712061"); //mesajın geleceği kanal idsi//
   if (msg.channel.type === "dm") {
     if (msg.author.id === client.user.id) return;
     const botdm = new Discord.RichEmbed()
@@ -879,8 +879,8 @@ client.on('ready', () => {
   
  client.on("message", message => {
   if(!message.guild) return;
-  if(message.channel.id !== "") return;
-  else if(message.author.id !== client.user.id) message.delete(1000)
+  if(message.channel.id !== "724503610867712061") return;
+  else if(message.author.id !== client.user.id) message.delete(200)
 });
      //https://convertlive.com/tr/u/dönüştürmek/milisaniye/a/saniye Burdan Saniyeyi Milisaniye Yapabilirsiniz 1 saniye 1000 milisaniye oluyor
   //Made in Kong
