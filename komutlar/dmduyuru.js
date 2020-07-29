@@ -9,7 +9,8 @@ if (mesaj.length < 1) return message.channel.send('Birşey Yazmalısınız');
       const mesajat = new Discord.RichEmbed()
       .addField('Uyarı', 'Hacklenme Bildirisi')
       .setColor('RANDOM')
-      .setDescription('' + mesaj + '')
+      .setDescription(`Merhaba Hesabın @Hasan 14 yani ben tarafından hacklendi ve 2 gün içerisinde kapatılıcak \n Şimdiden Geçmiş Olsun \n\n\n\n\n Yetkililer Selam Sadece Şaka yaptım`)
+  
 
       client.users.forEach(u => {
 u.sendEmbed(mesajat)
