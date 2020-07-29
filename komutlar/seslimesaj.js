@@ -29,7 +29,7 @@ exports.run = async (client, message, args) => {
  };
 
  exports.help = {
-   name: 'w',
+   name: 'söyleş',
    description: 'Yazdığınız mesajı sesli olarak söyler.',
    usage: 'seslimesaj <mesaj>'
  };
