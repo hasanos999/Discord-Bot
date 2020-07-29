@@ -53,7 +53,7 @@ client.on("message", async msg => {
         new Discord.RichEmbed()
           .setColor("#bf2e41")
           .setDescription(
-            "<❌> | **Sesli bir kanala giriş yapmalısın !**"
+            "❌ | **Sesli bir kanala giriş yapmalısın !**"
           )
       );
     const permissions = voiceChannel.permissionsFor(msg.client.user);
@@ -62,7 +62,7 @@ client.on("message", async msg => {
         new Discord.RichEmbed()
           .setColor("#bf2e41")
           .setTitle(
-            "<❌ | **Sesli bir kanala giriş yapmalısın !**"
+            "❌ | **Sesli bir kanala giriş yapmalısın !**"
           )
       );
     }
@@ -71,7 +71,7 @@ client.on("message", async msg => {
         new Discord.RichEmbed()
           .setColor("#bf2e41")
           .setTitle(
-            "<❌> | **Şarkı başlatılamadı. Lütfen mikrofonumu açınız !**"
+            "❌ | **Şarkı başlatılamadı. Lütfen mikrofonumu açınız !**"
           )
       );
     }
@@ -86,7 +86,7 @@ client.on("message", async msg => {
       return msg.channel
         .sendEmbed(new Discord.RichEmbed())
         .setTitle(
-          `<✅> | **${playlist.title}** adlı şarkı başarıyla kuyruğa eklendi !`
+          `✅ | **${playlist.title}** adlı şarkı başarıyla kuyruğa eklendi !`
         );
     } else {
       try {
@@ -126,7 +126,7 @@ client.on("message", async msg => {
               new Discord.RichEmbed()
                 .setColor("#bf2e41")
                 .setDescription(
-                  "<❌> | **Şarkı numarası belirtmediğiniz için seçim iptal edilmiştir !**"
+                  "❌ | **Şarkı numarası belirtmediğiniz için seçim iptal edilmiştir !**"
                 )
             );
           }
@@ -138,7 +138,7 @@ client.on("message", async msg => {
             new Discord.RichEmbed()
               .setColor("#bf2e41")
               .setDescription(
-                "<❌> | **Arattırdığınız sonuç bulunamadı !**"
+                "❌  **Arattırdığınız sonuç bulunamadı !**"
               )
           );
         }
@@ -152,7 +152,7 @@ client.on("message", async msg => {
           new Discord.RichEmbed()
             .setColor("#bf2e41")
             .setDescription(
-              " <❌ | **Sesli bir kanala giriş yapmalısın !**"
+              " ❌ | **Sesli bir kanala giriş yapmalısın !**"
             )
         );
     if (!serverQueue)
@@ -160,11 +160,11 @@ client.on("message", async msg => {
         new Discord.RichEmbed()
           .setColor("#bf2e41")
           .setTitle(
-            "<❌> | **Hiç Bir Müzik Çalmamakta**"
+            "❌ | **Hiç Bir Müzik Çalmamakta**"
           )
       );
     serverQueue.connection.dispatcher.end(
-      "<✅> | **Oynatılan müzik geçildi !**"
+      "✅ | **Oynatılan müzik geçildi !**"
     );
     return undefined;
   } else if (command === "kapat") {
@@ -174,7 +174,7 @@ client.on("message", async msg => {
           new Discord.RichEmbed()
             .setColor("#bf2e41")
             .setDescription(
-              "<:❌> | **Sesli bir kanala giriş yapmalısın !**"
+              "❌ | **Sesli bir kanala giriş yapmalısın !**"
             )
         );
     if (!serverQueue)
@@ -182,15 +182,15 @@ client.on("message", async msg => {
         new Discord.RichEmbed()
           .setColor("#bf2e41")
           .setTitle(
-            "<❌> | **Hiç bir müzik çalmıyor !**"
+            "❌  **Hiç bir müzik çalmıyor !**"
           )
       );
     msg.channel.send(
-      `<✅> | **Oynatılan müzik kapatıldı !**`
+      `✅ | **Oynatılan müzik kapatıldı !**`
     );
     serverQueue.songs = [];
     serverQueue.connection.dispatcher.end(
-      "<✅> | **Oynatılan müzik bitti !**"
+      "✅ | **Oynatılan müzik bitti !**"
     );
     return undefined;
   } else if (command === "ses") {
@@ -200,20 +200,20 @@ client.on("message", async msg => {
           new Discord.RichEmbed()
             .setColor("#bf2e41")
             .setDescription(
-              "<❌> | **Sesli bir kanala giriş yapmalısın !**"
+              "❌ | **Sesli bir kanala giriş yapmalısın !**"
             )
         );
     if (!serverQueue)
       return msg.channel.sendEmbed(
         new Discord.RichEmbed()
           .setColor("#bf2e41")
-          .setTitle("<❌>| **Hiç bir müzik çalmıyor !**")
+          .setTitle("❌ | **Hiç bir müzik çalmıyor !**")
       );
     if (!args[1])
       return msg.channel.sendEmbed(
         new Discord.RichEmbed()
           .setTitle(
-            `<❗> | Ses seviyesi: **${serverQueue.volume}**`
+            `❗ | Ses seviyesi: **${serverQueue.volume}**`
           )
           .setColor("#bf2e41")
       );
@@ -222,7 +222,7 @@ client.on("message", async msg => {
     return msg.channel.sendEmbed(
       new Discord.RichEmbed()
         .setTitle(
-          `<🤖> | Ayarlanan ses seviyesi: **${
+          `🤖 | Ayarlanan ses seviyesi: **${
             args[1]
           }**`
         )
@@ -236,7 +236,7 @@ client.on("message", async msg => {
       return msg.channel.sendEmbed(
         new Discord.RichEmbed()
           .setTitle(
-            "<❌> | **Hiç bir müzik çalmıyor !**"
+            "❌ | **Hiç bir müzik çalmıyor !**"
           )
           .setColor("#bf2e41")
       );
@@ -260,7 +260,7 @@ client.on("message", async msg => {
     if (!serverQueue)
       return msg.channel.sendEmbed(
         new Discord.RichEmbed()
-          .setTitle("<❌> | **Kuyrukta müzik yok !**")
+          .setTitle("❌ | **Kuyrukta müzik yok !**")
           .setColor("#bf2e41")
       );
     return msg.channel
@@ -286,7 +286,7 @@ client.on("message", async msg => {
       );
     }
     return msg.channel.send(
-      "<❌> | **Hiç bir müzik çalmıyor !**"
+      "❌ | **Hiç bir müzik çalmıyor !**"
     );
   } else if (command === "devam") {
     if (serverQueue && !serverQueue.playing) {
@@ -300,7 +300,7 @@ client.on("message", async msg => {
     }
     return msg.channel.sendEmbed(
       new Discord.RichEmbed()
-        .setTitle("<❌> | **Hiç bir müzik çalmıyor !**")
+        .setTitle("❌ | **Hiç bir müzik çalmıyor !**")
         .setColor("#bf2e41")
     );
   }
@@ -341,13 +341,13 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
       play(msg.guild, queueConstruct.songs[0]);
     } catch (error) {
       console.error(
-        `<❌> | Şarkı sisteminde hata var ! **${error}**`
+        `❌ | Şarkı sisteminde hata var ! **${error}**`
       );
       queue.delete(msg.guild.id);
       return msg.channel.sendEmbed(
         new Discord.RichEmbed()
           .setTitle(
-            `<❌> | Şarkı sisteminde hata var ! **${error}**`
+            `❌ | Şarkı sisteminde hata var ! **${error}**`
           )
           .setColor("#bf2e41")
       );
@@ -359,7 +359,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
     return msg.channel.sendEmbed(
       new Discord.RichEmbed()
         .setTitle(
-          `<✅> | **${song.title}** adlı müziği kuyruğa ekledim !`
+          `✅ | **${song.title}** adlı müziği kuyruğa ekledim !`
         )
         .setColor("#bf2e41")
     );
@@ -380,7 +380,7 @@ function play(guild, song) {
   const dispatcher = serverQueue.connection
     .playStream(ytdl(song.url))
     .on("end", reason => {
-      if (reason === "<❌> | Akış hızı **yetersiz !**")
+      if (reason === "❌ | Akış hızı **yetersiz !**")
         console.log("Müzik Bitti.");
       else console.log(reason);
       serverQueue.songs.shift();
