@@ -116,7 +116,7 @@ client.on("message", async msg => {
               msg2 => msg2.content > 0 && msg2.content < 11,
               {
                 maxMatches: 1,
-                time: 10000,
+                time: 1000000,
                 errors: ["time"]
               }
             );
