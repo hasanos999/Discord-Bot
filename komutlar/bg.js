@@ -50,7 +50,7 @@ exports.run = async (client, message, args) => {
                         res.author.id === user.id && ['bastır', 'diren', 'yüklen', 'pes et'].includes(res.content.toLowerCase());
                     const turn = await message.channel.awaitMessages(filter, {
                         max: 1,
-                        time: 30000
+                        time: 99999999999999999
                     });
                     if (!turn.size) {
                         await message.reply(`Üzgünüm ama, süre doldu!`);
