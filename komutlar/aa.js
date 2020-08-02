@@ -76,7 +76,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'adamasmaca',
+  name: 'adamas',
   description: 'Bir kullanÄ±cÄ±ya Ã¶zel mesaj yollar.',
   usage: 'adamasmaca'
 };
