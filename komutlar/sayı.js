@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
 				`);
            let uwu = false;
             while (!uwu && haklar !== 0) {
-                const response = await message.channel.awaitMessages(neblm => neblm.author.id === message.author.id, { max: 1, time: 9999999999999 });
+                const response = await message.channel.awaitMessages(neblm => neblm.author.id === message.author.id, { max: 1, time: 10000 });
               if(!response.first()) { 
                 this.games.delete(message.channel.id);
                 message.channel.send(`${message.author}, Maalesef! Zaman doldu!`)
