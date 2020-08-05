@@ -36,7 +36,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'dalinrolmesajkapat', 
+  name: 'otorolmesajkapat', 
   description: 'Slots oyunu oynar',
   usage: 'otorolmesajkapat'
 };
