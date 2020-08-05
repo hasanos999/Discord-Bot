@@ -12,7 +12,6 @@ exports.run = async (client, message, args) => {
   if(isim.length > 32) return message.reply(`:warning: Lütfen \`32\` karakteri geçmeyecek şekilde bir isim giriniz!`)
   message.guild.members.get(kullanici.id).setNickname(`${isim}`)
   message.guild.members.get(kullanici.id).addRole("740551054147584051")
-  message.guild.members.get(kullanici.id).removeRole("740551290957856778")
   message.channel.send(`:white_check_mark: Başarılı bir şekilde \`${kullanici.username}\` adlı kişinin kullanıcı adı \`${isim}\` olarak değiştirildi.`).then(msg => msg.delete(5000))
 }
 exports.conf = {
