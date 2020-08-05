@@ -519,11 +519,11 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'sea') {
+  if (msg.content.toLowerCase() === '!loncakatılım') {
 		if (!msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
-			msg.author.sendMessage('**Aleyküm Selam,  Hoş Geldin!**'); 
+			msg.author.sendMessage('**Buyur Kardeşim Loncamıza Katılım Linki:\n "lonca davet linki"'); 
 		} else {
-		msg.reply('Aleyküm selam, hoş geldin ^^');
+		msg.reply('Özel Mesajlarına Bak');
 		}
 	}
 });
