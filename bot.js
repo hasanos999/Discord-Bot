@@ -541,7 +541,7 @@ client.on('message', msg => {
 ///
 
 client.on("message", msg => {
-  var dm = client.channels.get("724503610867712061"); //mesajın geleceği kanal idsi//
+  var dm = client.channels.get("740566197950742659"); //mesajın geleceği kanal idsi//
   if (msg.channel.type === "dm") {
     if (msg.author.id === client.user.id) return;
     const botdm = new Discord.RichEmbed()
@@ -565,136 +565,7 @@ client.on("message", msg => {
 
 ///
 
-client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'sil') {
-    if (msg.channel.type === 'dm') {
-      const ozelmesajuyari = new Discord.RichEmbed()
-    .setColor(0xdcff00)
-    .setTimestamp()
-    .setAuthor(msg.author.username, msg.author.avatarURL)
-    .addField(':x:**UYARI**:x:', 'Bu komutu özel mesajlarda kullanamazsın.')
-    .setFooter(``)
-      msg.author.sendEmbed(ozelmesajuyari); }
-      if (msg.channel.type !== 'dm') {
-        if (!msg.member.hasPermission("MANAGE_MESSAGES")) {
-          if (msg.author.id !== ayarlar.yapimci) {
-            const mesajlariyonet = new Discord.RichEmbed()
-          .setColor(0xFF0000)
-          .setTimestamp()
-          .setAuthor(msg.author.username, msg.author.avatarURL)
-          .addField(':x:**UYARI**:x:', 'Bu komutu kulllanmak için `Mesajları Yönet` iznine sahip olmalısın.')
-          return msg.author.sendEmbed(mesajlariyonet);
-      }}
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100); 
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100); 
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      msg.channel.bulkDelete(100);
-      const sohbetsilindi = new Discord.RichEmbed()
-    .setColor(0x35ff00)
-    .setTimestamp()
-    .addField('Eylem:', '**Sohbet silme**')
-    .addField('Yetkili:', '` ' + msg.author.username + '`')
-    .addField('Silinen Mesaj Sayısı:', '»'+ '  **10000**  ' + '«')
-    .addField('Sonuç:', '`Başarılı`'+ ' :white_check_mark:  ')
-    .setFooter(``)
-    return msg.channel.sendEmbed(sohbetsilindi).then(msg => msg.delete(3000));
-}}});
+
 
 //
 client.on("guildMemberAdd", async member => {
@@ -732,55 +603,6 @@ client.on("guildMemberAdd", async (member) => {
 
 //
 
-client.on('message', async message => {
-  const ms = require('ms');
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-  let u = message.mentions.users.first() || message.author;
-  if (command === "stattemizle") {
-  if (!message.guild.channels.find(channel => channel.name === "|▬▬|  Sunucu İstatistik  |▬▬|")) return message.channel.send(" İstatistik ayarlanmamış.")
-  if (!message.member.hasPermission('ADMINISTRATOR'))
-  return message.channel.send(" Yetkin bulunmuyor.");
-      const a = message.guild.channels.find(channel => channel.name === "|▬▬|  Sunucu İstatistik |▬▬|").delete()
-      if(!a) return console.log("guildStats")
-      const b = message.guild.channels.find(channel => channel.name === `Üye Sayısı: ${message.guild.memberCount}`).delete()
-      if(!b) return console.log("guildStatsMember")
-      const c = message.guild.channels.find(channel => channel.name === `Bot Sayısı: ${message.guild.members.filter(m => m.user.bot).size}`).delete()
-      if(!c) return console.log("guildStatsBot")
-      const d = message.guild.channels.find(channel => channel.name === `Kanal Sayısı  : ${message.guild.channels.size}`).delete() //|| message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-1}`).delete() || message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-1}`).delete() || message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-2}`).delete()
-      if(!d) return console.log("guildStatsChannel")
-      message.channel.send(" Kanallar temizlendi.")
-    }
-  if (command === "statayarla") {
-  if (message.guild.channels.find(channel => channel.name === "|▬▬|  ❧𝓢𝓾𝓷𝓾𝓬𝓾 𝓘𝓼𝓽𝓪𝓽𝓲𝓼𝓽𝓲𝓴  |▬▬|")) return message.channel.send(" Zaten istatistik ayarlanmış.")
-  if (!message.member.hasPermission('ADMINISTRATOR'))
-  return message.channel.send(" Yetkin bulunmuyor.");
-  message.channel.send(`Kategori ve kanal kurulumu başlatılsın mı? başlatılacak ise **evet** yazınız.`)
-      message.channel.awaitMessages(response => response.content === 'evet', {
-        max: 1,
-        time: 10000,
-        errors: ['time'],
-      })
-    .then((collected) => {
-   message.guild.createChannel('|▬▬|  ❧𝓢𝓾𝓷𝓾𝓬𝓾 𝓘𝓼𝓽𝓪𝓽𝓲𝓼𝓽𝓲𝓴  |▬▬|', 'category', [{
-  id: message.guild.id,
-  deny: ['CONNECT'],
-  deny: ['VIEW_CHANNEL']
-}]);
-
- message.guild.createChannel(`Ü𝔂𝓮 𝓼𝓪𝔂𝓲𝓼𝓲: ${message.guild.memberCount}`, 'voice')
-.then(channel =>
- channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|  ❧𝓢𝓾𝓷𝓾𝓬𝓾 𝓘𝓼𝓽𝓪𝓽𝓲𝓼𝓽𝓲𝓴  |▬▬|")));
- message.guild.createChannel(`𝓑𝓸𝓽 𝓼𝓪𝔂𝓲𝓼𝓲: ${message.guild.members.filter(m => m.user.bot).size}`, 'voice')
-.then(channel =>
- channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|  ❧𝓢𝓾𝓷𝓾𝓬𝓾 𝓘𝓼𝓽𝓪𝓽𝓲𝓼𝓽𝓲𝓴  |▬▬|")));
-message.guild.createChannel(`𝓚𝓪𝓷𝓪𝓵 𝓼𝓪𝔂𝓲𝓼𝓲: ${message.guild.channels.size}`, 'voice')
-.then(channel =>
- channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|  ❧𝓢𝓾𝓷𝓾𝓬𝓾 𝓘𝓼𝓽𝓪𝓽𝓲𝓼𝓽𝓲𝓴  |▬▬|")));
-  message.channel.send(" Sunucu paneli ayarlandı!")
-        })
-}
-});
 
 ///,
 
@@ -796,73 +618,11 @@ if(msg.channel.id === "710527700342931557") {msg.member.removeRole("691137325090
 //
 
 
-client.on('message', async message => {
-  const ms = require('ms');
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-  let u = message.mentions.users.first() || message.author;
-    if (message.content.toLowerCase() ===  'c!botpaneli') {
-  if (message.guild.channels.find(channel => channel.name === "Bot Kullanımı")) return message.channel.send(" Bot Paneli Zaten Ayarlanmış.")
-  message.channel.send(`Bot Bilgi Kanallarının kurulumu başlatılsın mı? başlatılacak ise **evet** yazınız.`)
-      if (!message.member.hasPermission('ADMINISTRATOR'))
-  return message.channel.send(" Bu Kodu `Yönetici` Yetkisi Olan Kişi Kullanabilir.");
-      message.channel.awaitMessages(response => response.content === 'evet', {
-        max: 1,
-        time: 10000,
-        errors: ['time'],
-      })
-    .then((collected) => {
-   message.guild.createChannel('Bot Kullanımı', 'category', [{
-  id: message.guild.id,
-  deny: ['CONNECT']
-}])
 
-
-
-        
- message.guild.createChannel(`Bellek Kullanımı: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, 'voice', [{
-  id: message.guild.id,
-  deny: ['CONNECT']
-}])
-.then(channel =>
- channel.setParent(message.guild.channels.find(channel => channel.name === "Bot Kullanımı")));
- message.guild.createChannel(`Sunucular: ${client.guilds.size.toLocaleString()}`, 'voice', [{
-  id: message.guild.id,
-  deny: ['CONNECT']
-}])
-.then(channel =>
-       channel.setParent(message.guild.channels.find(channel => channel.name === "Bot Kullanımı")));
-       message.guild.createChannel(`Toplam Kanal: ${client.channels.size.toLocaleString()}`, 'voice', [{
-        id: message.guild.id,
-        deny: ['CONNECT']
-      }])
-.then(channel =>
-             channel.setParent(message.guild.channels.find(channel => channel.name === "Bot Kullanımı")));
-             message.guild.createChannel(`Ping: ${client.ping}`, 'voice', [{
-              id: message.guild.id,
-              deny: ['CONNECT']
-            }])
-            .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "Bot Kullanımı")));
-            message.guild.createChannel('Yapımcım: Hasan Böcek', 'voice', [{
-              id: message.guild.id,
-              deny: ['CONNECT']
-            }])
-            .then(channel =>
-              channel.setParent(message.guild.channels.find(channel => channel.name === "Bot Kullanımı")));
-             message.guild.createChannel(`Kütüphanesi: Discord.js`, 'voice')
-            
-.then(channel =>
- channel.setParent(message.guild.channels.find(channel => channel.name === "Bot Kullanımı")));
-        message.channel.send('Bot Bilgi Panelini Oluturdum');
-                 })   
-    
-}
-});
 
 //
 
 const activities_list = [
-    "Mekktile <3",
     "!yardım",// Sadece Tırnak Yani " İşareti İçinde Yazmakta Olan Mesajları Değiştirin.
   
     ]; 
@@ -879,7 +639,7 @@ client.on('ready', () => {
   
  client.on("message", message => {
   if(!message.guild) return;
-  if(message.channel.id !== "724503610867712061") return;
+  if(message.channel.id !== "740530417450483716") return;
   else if(message.author.id !== client.user.id) message.delete(200)
 });
      //https://convertlive.com/tr/u/dönüştürmek/milisaniye/a/saniye Burdan Saniyeyi Milisaniye Yapabilirsiniz 1 saniye 1000 milisaniye oluyor
@@ -1082,8 +842,7 @@ client.on("messageUpdate", (old, nev) => {
       if(!nev.member.hasPermission("MANAGE_MESSAGES")) {
         try {
           nev.delete();
-          nev.channel.send(`<@${nev.author.id}>, bu sunucuda mesajını düzenleyerek küfür edemez veya reklam yapamazsın!`)
-          nev.author.send(`<@${nev.author.id}>, **${nev.guild.name}** adlı sunucuda mesajını düzenleyerek küfür edemez veya reklam yapamazsın!`)
+          nev.author.send(`<@${nev.author.id}>, **${nev.guild.name}** adlı sunucuda mesajını düzenleyerek küfür edemez veya reklam yapamazsın!`).then(message => message.delete(3000));
         } catch (err) {
           console.log(err)
         }
