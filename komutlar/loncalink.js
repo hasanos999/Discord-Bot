@@ -7,8 +7,9 @@ exports.run = async(client, message) => {
 	const codare = new Discord.RichEmbed()
        .setColor("RANDOM")
        .setAuthor(`Lonca`)
-       .setTitle(`Katılım Komutları`)
-       .setDescription(`**.`)
+       .setURL('https://craftrise.tc/')
+       .setTitle(`CraftRise Türkiye`)
+       .setDescription(`**Buyur Kardeşim Lonca Katılım Linkin Yukarda**`)
        
   .setFooter(`Yapımcı @Hasan 14`)
   return message.channel.send(codare)
