@@ -2,7 +2,7 @@
 
 exports.run = async(client, message) => {
 	
-	let prefix = '!'
+	let prefix = '-'
 
 	const codare = new Discord.RichEmbed()
        .setAuthor(`Komutlar`)
