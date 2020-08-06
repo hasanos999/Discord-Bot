@@ -518,15 +518,8 @@ client.on('message', msg => {
 	}
 });
 
-client.on('message', msg => {
-  if (msg.content.toLowerCase() === '!loncakatılım') {
-		if (!msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")) {
-			msg.author.sendMessage('**Buyur Kardeşim Loncamıza Katılım Linki:\n "lonca davet linki"'); 
-		} else {
-		msg.reply('Özel Mesajlarına Bak');
-		}
-	}
-});
+
+
 
 client.on('message', msg => {
   if (msg.content.toLowerCase() === 'selamun aleyküm') {
