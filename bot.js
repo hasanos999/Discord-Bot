@@ -600,7 +600,7 @@ client.on("guildMemberAdd", async (member) => {
 ///,
 
 client.on("message", async msg => {
-if(msg.channel.id === "706945052852748379") {msg.member.addRole("")}//711266881255768065
+if(msg.channel.id === "706945052852748379") {msg.member.addRole("740523600049733644")}//711266881255768065
 })
 
 //
