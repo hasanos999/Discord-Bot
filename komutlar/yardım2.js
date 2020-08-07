@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
+
  
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, forwardsFilter, backwardsFilter) => {
  
   let pages = [
               '**Bot Hakkında Kısa Bilgi**\n\n\n' + '``-``Botumuz Loncamızın Discord Sunucusunda Kolaylıklar Sağlamak İçin Bulunuyor.\nEğer Birileri Huzursuzluk Çıkarıcak Olursa Botumuz Devreye Girer Ve Huzursuzluk Çıkarılamaz.',
@@ -52,7 +53,8 @@ exports.run = (client, message, args) => {
  
     })
   })
- 
+ const author = forwardsFilter.users.last()
+forwardsFilter.remove(author.id)
 };
  
  
