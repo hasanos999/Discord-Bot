@@ -38,6 +38,7 @@ exports.run = (client, message, args) => {
         embed.setFooter(`Sayfa ${page} / ${pages.length}`)
         msg.edit(embed)
       })
+    message.react(remove)
       backwards.on('collect', r => {
         if(page === 1) return;
         page--;
@@ -49,7 +50,7 @@ exports.run = (client, message, args) => {
 
     })
   })
-  
+  setTimeout(100)
 };
 
 
