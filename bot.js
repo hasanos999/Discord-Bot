@@ -46,7 +46,7 @@ client.on("message", async msg => {
 
   //command = command.slice(prefix.length)
 
-  if (command === "çal") {
+  if (command === "yetçal") {
     const voiceChannel = msg.member.voiceChannel;
     if (!voiceChannel)
       return msg.channel.sendEmbed(
@@ -145,7 +145,7 @@ client.on("message", async msg => {
       }
       return handleVideo(video, msg, voiceChannel);
     }
-  } else if (command === "geç") {
+  } else if (command === "yetskip") {
     if (!msg.member.voiceChannel)
       if (!msg.member.voiceChannel)
         return msg.channel.sendEmbed(
@@ -167,7 +167,7 @@ client.on("message", async msg => {
       "✅ | **Oynatılan müzik geçildi !**"
     );
     return undefined;
-  } else if (command === "kapat") {
+  } else if (command === "yetkapat") {
     if (!msg.member.voiceChannel)
       if (!msg.member.voiceChannel)
         return msg.channel.sendEmbed(
@@ -193,7 +193,7 @@ client.on("message", async msg => {
       "✅ | **Oynatılan müzik bitti !**"
     );
     return undefined;
-  } else if (command === "ses") {
+  } else if (command === "yetes") {
     if (!msg.member.voiceChannel)
       if (!msg.member.voiceChannel)
         return msg.channel.sendEmbed(
@@ -231,7 +231,7 @@ client.on("message", async msg => {
     /////////////////////////////////////////////////
 
     /////////////////////////////////////////////
-  } else if (command === "çalan") {
+  } else if (command === "yetçalan") {
     if (!serverQueue)
       return msg.channel.sendEmbed(
         new Discord.RichEmbed()
@@ -255,7 +255,7 @@ client.on("message", async msg => {
           true
         )
     );
-  } else if (command === "kuyruk") {
+  } else if (command === "yetkuyruk") {
     let index = 0;
     if (!serverQueue)
       return msg.channel.sendEmbed(
@@ -275,7 +275,7 @@ client.on("message", async msg => {
           )
       )
       .addField("Şu anda çalınan: " + `${serverQueue.songs[0].title}`);
-  } else if (command === "durdur") {
+  } else if (command === "yetdurdur") {
     if (serverQueue && serverQueue.playing) {
       serverQueue.playing = false;
       serverQueue.connection.dispatcher.pause();
@@ -288,7 +288,7 @@ client.on("message", async msg => {
     return msg.channel.send(
       "❌ | **Hiç bir müzik çalmıyor !**"
     );
-  } else if (command === "devam") {
+  } else if (command === "yetdevam") {
     if (serverQueue && !serverQueue.playing) {
       serverQueue.playing = true;
       serverQueue.connection.dispatcher.resume();
@@ -940,81 +940,3 @@ client.on("guildMemberAdd", async member => {
    
 //
 
-
-client.on("guildMemberAdd", async member => {
- let log = 'mod-log';
-let lbulundu = await db.fetch(`giriscikis_${member.guild.id}`);
-if (lbulundu === null) log = 'mod-log';
-else log = lbulundu;
-        
-  
-      
-    const channel = member.guild.channels.find('name', `${log}`);
-  
-  if (!channel) return;
-        let username = member.user.username;
-        let id = member.user.id;
-        if (channel === undefined || channel === null) return;
-        if (channel.type === "text") {            
-          const bg = await Jimp.read("https://cdn.discordapp.com/attachments/499911418896973824/500023171827761154/guildAdd_2.png");
-  const userimg = await Jimp.read(member.user.avatarURL);
-            var font;
-            if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            await bg.print(font, 430, 170, member.user.tag);
-            await userimg.resize(362, 362);
-            await bg.composite(userimg, 43, 26).write("./img/"+ member.id + ".png");
-              setTimeout(function () {
-                    if( id == "616178965865955340" ){
-                     channel.send(new Discord.Attachment("./img/" + member.id + ".png"))
-                      channel.send("İşte Bak! Kurucum sunucuna giriş yaptı.")
-                    }else{
-                     channel.send(new Discord.Attachment("./img/" + member.id + ".png"));
-                    }
-              }, 1000);
-              setTimeout(function () {
-                fs.unlink("./img/" + member.id + ".png");
-              }, 10000);
-        }
-    })
-
-
-
-
-client.on("guildMemberRemove", async member => {
-  
-let log = 'mod-log';
-let lbulundu = await db.fetch(`giriscikis_${member.guild.id}`);
-if (lbulundu === null) log = 'mod-log';
-else log = lbulundu;
-           
-  
-    const channel = member.guild.channels.find('name', `${log}`);
-  if (!channel) return;
-        let username = member.user.username; 
-  let id = member.user.id
-        if (channel === undefined || channel === null) return;
-        if (channel.type === "text") {            
-          const bg = await Jimp.read("https://cdn.discordapp.com/attachments/499911418896973824/500023173459345416/guildRemove_2.png");
- const userimg = await Jimp.read(member.user.avatarURL);
-            var font;
-            if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            await bg.print(font, 430, 170, member.user.tag);
-            await userimg.resize(362, 362);
-            await bg.composite(userimg, 43, 26).write("./img/"+ member.id + ".png");
-              setTimeout(function () {
-                    if( id == "616178965865955340" ){
-                     channel.send(new Discord.Attachment("./img/" + member.id + ".png"))
-                      channel.send("Kurucum sunucunuzdan ayrıldı..")
-                    }else{
-                     channel.send(new Discord.Attachment("./img/" + member.id + ".png"));
-                    }
-              }, 1000);
-              setTimeout(function () {
-                fs.unlink("./img/" + member.id + ".png");
-              }, 10000);
-        }
-    })
