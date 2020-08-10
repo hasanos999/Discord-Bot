@@ -1,4 +1,4 @@
-
+ 
 const { GOOGLE_API_KEY } = require("./anahtarlar.json");
 const Discord = require("discord.js");
 const client = new Discord.Client();
