@@ -43,6 +43,22 @@ client.on("message", async msg => {
   const serverQueue = queue.get(msg.guild.id);
   let command = msg.content.split(" ")[0].slice(ayarlar.prefix.length);
   let sayac = JSON.parse(fs.readFileSync("./ayarlar/sayac.json", "utf8")); 
+  
+  
+  //
+  
+const express = require("express");
+const http = require("http");
+const app = express();
+ 
+app.get("/", (request, response) => {
+  //console.log(Date.now() + " BOT Aktif.");
+  //response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_NAME}.glitch.me`);
+}, 1000 * 60 * 3);
 
   //command = command.slice(prefix.length)
 

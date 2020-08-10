@@ -1,35 +1,29 @@
-const Discord = require('discord.js')
-const googleTTS = require('google-tts-api');
+const Discord = require("discord.js");
+const google = require("google-tts-api");
 const ayarlar = require('../ayarlar.json');
-const opus = require("node-opus")
-
-exports.run = async (client, message, args) => {
-    let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || ayarlar.prefix
-
-  let yazi = args.join(" ")
-  
-  if (!message.member.voiceChannel) return message.channel.send(' Lütfen sesli bir kanala katıl ve tekrar dene.').then(msg => msg.delete(5000));
-  if (!yazi) return message.channel.send(' Sesli olarak söylenmesini istediğin mesajı belirtmelisin. \`${prefix}seslimesaj Merhaba\``').then(msg => msg.delete(5000))
-  
-  googleTTS(`${yazi}`, 'tr', 1).then(url => {
-    message.member.voiceChannel.join().then(connection => {
-      message.channel.send(` \`${yazi}\` mesajı sesli olarak söyleniyor.`).then(msg => msg.delete(5000))
-      connection.playStream(url).on("end",() => {
-      })
+let prefix = ayarlar.prefix;
+exports.run = (client, message) => {
+      const args = message.content.slice(prefix.length).split(' ');
+    const command = args.shift().toLowerCase();
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.channel.send(`İlk önce bir sesli kanala girmeniz gerek`)
+    google(`${args.slice(' ')}`, 'tr', 1).then(url => {
+        message.member.voiceChannel.join().then(connection => {
+            message.channel.send(`**${args.slice(' ')}** adlı mesaj sesli olarak söyleniyor`)
+            connection.playStream(url).on("end", () => {
+                connection.disconnect();
+            })
+        })
     })
-  })
-  
 };
- exports.conf = {
-   enabled: true,
-   guildOnly: false,
-   aliases: ['konuş'],
-   kategori: "eğlence",
-   permLevel: 0
- };
-
- exports.help = {
-   name: 'söyleş',
-   description: 'Yazdığınız mesajı sesli olarak söyler.',
-   usage: 'seslimesaj <mesaj>'
- };
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: [],
+    permLevel: 1
+};
+exports.help = {
+    name: 'söyle',
+    description: 'Bota yazdığınız şeyi sesli mesaj olarak söyletir',
+    usage: 'söyle <mesaj>'
+};
