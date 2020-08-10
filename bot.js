@@ -997,7 +997,7 @@ client.on("message", async msg => {
 
 };
 
-  if (db.fetch(`puancik_${msg.author.id + msg.guild.id}`) > 2) {//150 xp de 1 seviye veriyor
+  if (db.fetch(`puancik_${msg.author.id + msg.guild.id}`) > 150) {//150 xp de 1 seviye veriyor
     
     db.add(`seviye_${msg.author.id + msg.guild.id}`, 1)//seviye verildi
     
