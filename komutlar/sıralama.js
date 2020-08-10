@@ -40,3 +40,4 @@ exports.help = {
   description: 'Seviye sisteminin sunucudaki liderlik tablosunu gĂ¶sterir.',
   usage: 'liderlik'
 };
+   
