@@ -50,7 +50,7 @@ msg.channel.send(newembed)
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["seviye"],
+  aliases: ["seviye","rank"],
   permLevel: 0,
 };
 
