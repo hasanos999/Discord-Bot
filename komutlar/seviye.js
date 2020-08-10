@@ -19,10 +19,12 @@ exports.run = async (client, msg, args) => {
   
 
   //
+  
+  var xp, salam, lvl;
 
-var xp = await db.fetch(`puancik_${u.id + msg.guild.id}`);
- var salam = await db.fetch(`xpsira_${u.id + msg.guild.id}`);
-var lvl = await db.fetch(`seviye_${u.id + msg.guild.id}`);
+ db.fetch(`puancik_${u.id + msg.guild.id}`).then(data => xp = data);
+ db.fetch(`xpsira_${u.id + msg.guild.id}`).then(data => salam = data);
+ db.fetch(`seviye_${u.id + msg.guild.id}`).then(data => lvl = data);
   
         let sira = ''
         const sorted = msg.guild.members.filter(u => !u.user.bot).array().sort((a, b) => { return db.fetch(`xpsira_${b.user.id + msg.guild.id}`) - db.fetch(`xpsira_${a.user.id + msg.guild.id}`) });
