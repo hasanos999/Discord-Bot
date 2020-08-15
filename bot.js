@@ -46,8 +46,9 @@ client.on("message", async msg => {
   
   
   //
- 
-  //command = command.slice(prefix.length)
+
+
+
 
   if (command === "yetçal") {
     const voiceChannel = msg.member.voiceChannel;
