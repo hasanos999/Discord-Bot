@@ -33,8 +33,8 @@ module.exports.run = async (bot, message, args) => {
                     return res.author.id === message.author.id && !confirmation.includes(choice) && !yanlış.includes(choice);
                 };
                 const guess = await message.channel.awaitMessages(filter, {
-                    max: 1,
-                    time: 300000
+                    max: 5,
+                    time: 1000
                 });
                 if (!guess.size) {
                     await message.channel.send('Zamanın doldu!');
