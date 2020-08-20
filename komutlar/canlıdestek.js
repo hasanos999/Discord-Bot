@@ -14,7 +14,7 @@ const emoji7 = message.client.emojis.get('📞');
       message.reply("Birazdan Yetkili Ekibimiz sizinle ilgilenicektir.");
       let mesaj = args.slice(0).join(' ');
       let chan = message.channel;
-      let destekKanal = "710527757691519047";
+      let destekKanal = "745964036767875142";
       const embed = new Discord.RichEmbed()
         .addField('Uyarı', `📞 Canlı Destek Çağrısı`)
         .setAuthor(`${message.author.tag} `, `${message.author.avatarURL}`)
@@ -28,33 +28,33 @@ const emoji7 = message.client.emojis.get('📞');
     const collector = client.channels.get(destekKanal).createCollector(message => message.content.startsWith(''), {
       time: 0
     })
-    client.channels.get(destekKanal).send('📞 Destek çagrısı bağlanmak için `katıl` yazınız. İptal Etmek İçin `kapat` yazınız.')
+    client.channels.get(destekKanal).send('📞 Soru Talebiniz çagrısı bağlanmak için `katıl` yazınız. İptal Etmek İçin `kapat` yazınız.')
     collector.on('message', (message) => {
       if (message.content === 'kapat') collector.stop('aborted')
       if (message.content === 'katıl') collector.stop('success')
     })
     collector.on('end', (collected, reason) => {
-      if (reason === 'time') return message.reply('📞 Çagrı zaman aşımına uğradı.')
+      if (reason === 'time') return message.reply('📞 Soru Talebi zaman aşımına uğradı.')
       if (reason === 'aborted') {
         message.reply('Çağrı reddedildi.')
-        client.channels.get(destekKanal).send('📞 Başarıyla çağrı reddedildi.')
+        client.channels.get(destekKanal).send('📞 Başarıyla Soru Talebi reddedildi.')
       }
       if (reason === 'success') {
-        client.channels.get(destekKanal).send('📞 Destek çagrısı alındı!')
-        client.channels.get(destekKanal).send('📞 Destek çağrısını kapatmak için `kapat` yazınız.')
+        client.channels.get(destekKanal).send('📞 Soru Talebiniz alındı!')
+        client.channels.get(destekKanal).send('📞 Soru Talebinizi kapatmak için `kapat` yazınız.')
         chan.send(`${message.author}`)
-        chan.send('Çağrınız bir destek yetkili tarafından alındı!')
+        chan.send('Soru Talebiniz bir destek yetkili tarafından alındı!')
         chan.send('En Yakın Zamanda Size Yardımcı Olacagız.')
-        chan.send('Destek çagrısı kapatmak için `kapat` yazınız.')
+        chan.send('Soru Talebini kapatmak için `kapat` yazınız.')
         isEnabled = true
         client.on('message', message => {
           function contact() {
             if (isEnabled === false) return
             if (message.author.id === client.user.id) return
             if (message.content.startsWith('kapat')) {
-              message.channel.send('📞 Çağrı Kapatıldı.')
-              if (message.channel.id === chan.id) client.channels.get(destekKanal).send('📞 Çağrı karşı taraftan kapatıldı.')
-              if (message.channel.id === destekKanal) chan.send('📞 Çağrı karşı taraftan kapatıldı.')
+              message.channel.send('📞 Soru Talebiniz Kapatıldı.')
+              if (message.channel.id === chan.id) client.channels.get(destekKanal).send('📞 Soru Talebiniz Karşı Taraftan Kapatıldı.')
+              if (message.channel.id === destekKanal) chan.send('📞 Soru Talebiniz Karşı Taraftan Kapatıldı.')
               return isEnabled = false
             }
             if (message.channel.id === chan.id) client.channels.get(destekKanal).send(`📞 **${message.author.tag}**: ${message.content}`)
