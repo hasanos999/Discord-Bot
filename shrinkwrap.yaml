@@ -14,6 +14,7 @@ dependencies:
   node-superfetch: 0.1.10
   opusscript: 0.0.7
   quick.db: 6.3.2
+  quick.hook: 1.5.1
   simple-youtube-api: 5.2.1
   superagent: 5.3.1
   weather-js: 2.0.0
@@ -1580,6 +1581,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-+Fd7skXH/MDoX4TIlwstzt4TsjOqF/3joDurXrSEePf0KPYXEwwq3EnzoJ6C4dzZ58KGSasNdAU1OeC8envvWA==
+  /quick.hook/1.5.1:
+    dev: false
+    resolution:
+      integrity: sha512-5Rmt7Y7Zz9TnU/mE/ywxCmOkHa3Evyag+HtTdlFIFOykdfs2jbZYl7xzZghdRD3GuBW/M9YvNB8nD7WBvtQMfQ==
   /range-parser/1.2.1:
     dev: false
     engines:
@@ -2041,6 +2046,7 @@ specifiers:
   node-superfetch: ^0.1.10
   opusscript: ^0.0.7
   quick.db: ^6.3.2
+  quick.hook: ^1.5.1
   simple-youtube-api: ^5.2.1
   superagent: ^5.2.2
   weather-js: ^2.0.0
