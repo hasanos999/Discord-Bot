@@ -28,7 +28,7 @@ const emoji7 = message.client.emojis.get('📞');
     const collector = client.channels.get(destekKanal).createCollector(message => message.content.startsWith(''), {
       time: 0
     })
-    client.channels.get(destekKanal).send('📞 Soru Talebiniz çagrısı bağlanmak için `katıl` yazınız. İptal Etmek İçin `kapat` yazınız.')
+    client.channels.get(destekKanal).send('📞 Soru Talebi bağlanmak için `katıl` yazınız. İptal Etmek İçin `kapat` yazınız.')
     collector.on('message', (message) => {
       if (message.content === 'kapat') collector.stop('aborted')
       if (message.content === 'katıl') collector.stop('success')
@@ -72,7 +72,7 @@ const emoji7 = message.client.emojis.get('📞');
   permLevel: 0
 };
 exports.help = {
-  name: 'canlıyardım',
+  name: 'sor',
   description: 'Canlı Destek Tablebi Oluşturur.',
   usage: 'canlıdestek'
 };

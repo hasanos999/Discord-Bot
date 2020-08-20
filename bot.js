@@ -636,8 +636,8 @@ client.on('ready', () => {
   
  client.on("message", message => {
   if(!message.guild) return;
-  if(message.channel.id !== "740530417450483716") return;
-  else if(message.author.id !== client.user.id) message.delete(200)
+  if(message.channel.id !== "745964218699874315") return;
+  else if(message.author.id !== client.user.id) message.delete(10000)
 });
      //https://convertlive.com/tr/u/dönüştürmek/milisaniye/a/saniye Burdan Saniyeyi Milisaniye Yapabilirsiniz 1 saniye 1000 milisaniye oluyor
   //Made in Kong
