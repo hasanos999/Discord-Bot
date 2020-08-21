@@ -26,7 +26,7 @@ exports.conf = {
   guildOnly: false,
   aliases: ['sunucupp'],
   permLevel: 0,
-  kategori: "Kullanıcı"
+  kategori: "kullanıcı"
 };
 
 exports.help = {

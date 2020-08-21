@@ -21,7 +21,7 @@ exports.conf = {
     guildOnly: false,
     aliases: ["söyle"],
     permLevel: 1,
-  kategori: "Kullanıcı"
+  kategori: "kullanıcı"
 };
 exports.help = {
     name: '**!Söyle** ,',

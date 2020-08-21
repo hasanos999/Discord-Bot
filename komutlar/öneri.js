@@ -22,7 +22,7 @@ exports.conf = {
   guildOnly: false,
   aliases: ["tavsiye"],
   permLevel: 0,
-  kategori: "kullanıcı"
+  
 };
 
 exports.help = {

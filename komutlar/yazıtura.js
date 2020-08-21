@@ -15,11 +15,11 @@ exports.conf = {
   guildOnly: false,
   aliases: ["yazıtura"],
   permLevel: 0,
-  kategori: "Kullanıcı"
+  kategori: "kullanıcı"
 };
 
 exports.help = {
-  name: 'yazıtura',
+  name: '**!yazıtura** ,',
   description: 'Yazı Tura Oynamanıza Yarar.',
   usage: 'yazı-tura'
 };

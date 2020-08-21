@@ -21,7 +21,7 @@ exports.conf = {
   guildOnly: true, 
   aliases: ["8ball"],
   permLevel: 0 ,
-  kategori: "Kullanıcı"
+  kategori: "kullanıcı"
 };
 
 exports.help = {

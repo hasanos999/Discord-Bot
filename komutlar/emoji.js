@@ -46,13 +46,13 @@ exports.run = (bot, msg, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["emojiyazı"],
   permLevel: 0,
     kategori: "kullanıcı"
 };
 
 exports.help = {
-  name: 'emojiyazı',
+  name: '**!EmojiYazı** ,',
   description: 'Mesajınızı emojiye çevirir.',
   usage: 'emojiyazı <mesaj>'
 };

@@ -29,7 +29,7 @@ exports.conf = {
   guildOnly: false, 
   aliases: ["stresçarkı"],
   permLevel: 0 ,
-  kategori: "Kullanıcı"
+  kategori: "kullanıcı"
 };
 
 exports.help = {

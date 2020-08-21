@@ -68,7 +68,7 @@ exports.conf = {
   guildOnly: true,
   aliases: ['sayıtahmini', 'sayıtahmin', 'sayı-tahmini'],
   permLevel: 0,
-  kategori: "Kullanıcı"
+  kategori: "kullanıcı"
 };
 exports.help = {
     name: '**!SayıTahmin** ,',
