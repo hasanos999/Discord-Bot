@@ -1,22 +1,27 @@
 const Discord = require('discord.js')
 const { RichEmbed } = require('discord.js')
-exports.run = (client, message, args) => {
+module.exports.run = async (client, message, args, channel) => {
 
-  let yazıİçeriği = args.slice().join(' ')
-  const Mesaj = new RichEmbed()
+ const Embed = new Discord.MessageEmbed()
 	.setColor('#0099ff')
-	.setTitle('PeeVed')
-	.setURL('https://www.craftrise.tc/lonca/befa16a1-7800-4d5d-9b3c-0f6f4360e6d3')
-	.setAuthor('Discord Linkimiz', 'https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FraccoonHead.png?v=1598031841290', 'https://discord.gg/TTYsCaQ')
-	.setDescription('Bu Yazıya Tıklayarak Loncamızın Katılım Linkine Ulaşabilirsiniz.')
-	.setThumbnail('https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FraccoonHead.png?v=1598031841290')
-	
+	.setTitle('Some title')
+	.setURL('https://discord.js.org/')
+	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription('Some description here')
+	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	.addFields(
+		{ name: 'Regular field title', value: 'Some value here' },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+	)
 	.addField('Inline field title', 'Some value here', true)
-	.setImage('https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FraccoonHead.png?v=1598031841290')
+	.setImage('https://i.imgur.com/wSTFkRM.png')
 	.setTimestamp()
-	.setFooter('Some footer text here', 'https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FraccoonHead.png?v=1598031841290');
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
-message.channel.send(Mesaj)
+channel.send(Embed);
+
 }
 
 exports.conf = {
