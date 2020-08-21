@@ -19,7 +19,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: '**!yazıtura** ,',
+  name: '**!yazıtura** ',
   description: 'Yazı Tura Oynamanıza Yarar.',
   usage: 'yazı-tura'
 };

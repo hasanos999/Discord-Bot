@@ -620,7 +620,7 @@ if(msg.channel.id === "710527700342931557") {msg.member.removeRole("691137325090
 //
 
 const activities_list = [
-    "!yardım",// Sadece Tırnak Yani " İşareti İçinde Yazmakta Olan Mesajları Değiştirin.
+    "!yardım kullanıcı",// Sadece Tırnak Yani " İşareti İçinde Yazmakta Olan Mesajları Değiştirin.
   
     ]; 
 client.on('ready', () => {

@@ -1,14 +1,13 @@
-const chalk = require('chalk');
-const moment = require('moment');
-const Discord = require('discord.js');
-const ayarlar = require('../ayarlar.json');
+const chalk = require('chalk')
+module.exports = (client) => {
 
-var prefix = ayarlar.prefix;
+//  WATCHING : !ping izliyor
+//  LISTENING : !ping dinliyor
+//  PLAYING  : !ping oynuyor 
 
-module.exports = client => {
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Aktif, Komutlar yüklendi!`);
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username} ismi ile giriş yapıldı!`);
-  console.log(`${client.guilds.size} Sunucuya Hizmet. ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} Kullanıcı`)
-  setInterval(() => {
-    }, 1 * 10000);
+    client.user.setActivity("!yardım kullanıcı",{ type: "PLAYING"} );
+
+    var logmesajı = chalk.bold.red("Oynuyor kısmı basari ile ayarlandi. \n")+ 
+                chalk.italic.yellow("Jspanco : " + client.user.presence.game )
+    console.log(logmesajı)
 }
