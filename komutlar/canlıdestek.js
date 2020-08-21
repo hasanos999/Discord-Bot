@@ -70,7 +70,7 @@ const emoji7 = message.client.emojis.get('📞');
   guildOnly: false,
   aliases: [],
   permLevel: 0,
-      kategori: "kullanıcı"
+   
 };
 exports.help = {
   name: 'sor',

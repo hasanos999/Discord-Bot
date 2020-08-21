@@ -107,7 +107,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: '**!BilekGüreşi**',
+  name: '**!BilekGüreşi** ,',
   category: "eğlence",
   description: 'İstediğiniz bir kişi ile bilekgüreşi atarsınız!',
   usage: 'bilekgüreşi <@kullanıcı>'

@@ -7,7 +7,7 @@ if(kategori === 'Moderasyon' | kategori === 'Kullanıcı' | kategori === 'Müzik
 let embed = new Discord.RichEmbed()
    .setAuthor(`${kategori} Komutları`)//keremdesu#0404
    .setTitle(`Örnek Kullanım: \n!komut`)//keremdesu#0404
-   .setDescription(client.commands.filter(c=>c.conf.kategori=== kategori).map(kmt=>kmt.help.name).join('**,\n **'))
+   .setDescription(client.commands.filter(c=>c.conf.kategori=== kategori).map(kmt=>kmt.help.name).join('\n '))
   message.channel.send(embed)
   } else { message.channel.send('Kategori \**Moderasyon**, **Kullanıcı** veya **Müzik**` olmalı!') }};
   
@@ -16,7 +16,7 @@ let embed = new Discord.RichEmbed()
       guildOnly: true,
       aliases:['help'],
       permLevel:0,
-    kategori: "kullanıcı"
+    
   }
   
   exports.help = {

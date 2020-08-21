@@ -13,9 +13,9 @@ module.exports.run = async (bot, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["yazıtura"],
   permLevel: 0,
-  kategori: "kullanıcı"
+  kategori: "Kullanıcı"
 };
 
 exports.help = {

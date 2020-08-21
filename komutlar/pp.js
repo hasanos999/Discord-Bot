@@ -24,13 +24,13 @@ exports.run = (client, message, params) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['sunucu-pp'],
+  aliases: ['sunucupp'],
   permLevel: 0,
-  kategori: "kullanıcı"
+  kategori: "Kullanıcı"
 };
 
 exports.help = {
-  name: 'pp',
+  name: '**!sunucupp** ,',
   description: 'Sunucu Resminin Linkini Atar.',
   usage: 'sunucuresmi'
 };

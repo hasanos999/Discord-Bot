@@ -19,12 +19,12 @@ exports.run = (client, message) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: [],
+    aliases: ["söyle"],
     permLevel: 1,
-  kategori: "kullanıcı"
+  kategori: "Kullanıcı"
 };
 exports.help = {
-    name: 'söyle',
+    name: '**!söyle** ,',
     description: 'Bota yazdığınız şeyi sesli mesaj olarak söyletir',
     usage: 'söyle <mesaj>'
 };

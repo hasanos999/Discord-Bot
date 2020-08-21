@@ -68,10 +68,10 @@ exports.conf = {
   guildOnly: true,
   aliases: ['sayıtahmini', 'sayıtahmin', 'sayı-tahmini'],
   permLevel: 0,
-  kategori: "kullanıcı"
+  kategori: "Kullanıcı"
 };
 exports.help = {
-    name: 'sayıtahmin',
+    name: '**!sayıtahmin** ,',
   description: 'Rastgele rakam belirler ve siz o rakamı bulmaya çalışırsınız.',
   usage: 'sayı-tahmin'
 };

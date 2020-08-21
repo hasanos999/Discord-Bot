@@ -19,13 +19,13 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true, 
   guildOnly: true, 
-  aliases: [],
+  aliases: ["8ball"],
   permLevel: 0 ,
-  kategori: "kullanıcı"
+  kategori: "Kullanıcı"
 };
 
 exports.help = {
-  name: '8ball', 
+  name: '**!8ball** ,', 
   description: 'Sorduğunuz Soruya Rastgele Cevap Verir.',
   usage: '8ball [soru]'
 };

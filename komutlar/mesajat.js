@@ -29,7 +29,7 @@ exports.conf = {
   guildOnly: false,
   aliases: ['pm','dm'],
   permlevel: 1,
-    kategori: "Moderasyon"
+   
 };
 
 exports.help = {

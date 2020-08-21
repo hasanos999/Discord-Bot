@@ -33,7 +33,7 @@ exports.conf = {
   guildOnly: false, 
   aliases: ["kapatotoyazı"],
   permLevel: 0,
-    kategori: "Moderasyon"
+ 
 };
 
 exports.help = {

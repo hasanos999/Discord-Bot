@@ -27,13 +27,13 @@ exports.run = async (client, message) => {
 exports.conf = {
   enabled: true, 
   guildOnly: false, 
-  aliases: [],
+  aliases: ["stresçarkı"],
   permLevel: 0 ,
-  kategori: "kullanıcı"
+  kategori: "Kullanıcı"
 };
 
 exports.help = {
-  name: 'stresçarkı', 
+  name: '**!stresçarkı** ,', 
   description: 'Sizin için bir stres çarkı çevirir.',
   usage: 'stresçarkı'
 };
