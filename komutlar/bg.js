@@ -101,13 +101,13 @@ exports.run = async (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['1vs1', '1v1', 'savaş'],
+  aliases: ['1vs1', '1v1', 'savaş', "bilekgüreşi"],
   permLevel: `Yetki gerekmiyor.`,
-    kategori: "kullanıcı"
+    kategori: "Kullanıcı"
 };
 
 exports.help = {
-  name: 'bilekgüreşi',
+  name: '**!BilekGüreşi**',
   category: "eğlence",
   description: 'İstediğiniz bir kişi ile bilekgüreşi atarsınız!',
   usage: 'bilekgüreşi <@kullanıcı>'
