@@ -21,7 +21,7 @@ exports.conf = {
     guildOnly: false,
     aliases: ['isimdegistir'],
     permLevel: 0,
-    kategori: "moderasyon"
+    kategori: "Moderasyon"
 }
 
 exports.help = {

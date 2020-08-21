@@ -12,7 +12,7 @@ exports.conf = {
   guildOnly: false,
   aliases: ['say', 'söyle'],
   permLevel: 0,
-  kategori: "moderasyon"
+  kategori: "Moderasyon"
 };
 
 exports.help = {

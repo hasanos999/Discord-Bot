@@ -19,7 +19,7 @@ exports.conf = {
  guildOnly: false,
  aliases: ['küfür'],
  permLevel: 0,
-    kategori: "moderasyon"
+    kategori: "Moderasyon"
 };
 
 exports.help = {

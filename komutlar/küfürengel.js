@@ -29,7 +29,7 @@ exports.conf = {
   guildOnly: true,
   aliases: [],
   permLevel: 0,
-    kategori: "moderasyon"
+    kategori: "Moderasyon"
 }
 
 exports.help = {
