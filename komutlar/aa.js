@@ -72,7 +72,8 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permlevel: 0
+  permlevel: 0,
+    kategori: "kullanıcı"
 };
 
 exports.help = {

@@ -20,11 +20,12 @@ exports.conf = {
     enabled: true,
     guildOnly: false,
     aliases: ['isimdegistir'],
-    permLevel: 0
+    permLevel: 0,
+    kategori: "moderasyon"
 }
 
 exports.help = {
-    name: 'loncakayıt',
+    name: 'pvloncakayıt',
     description: 'Belirttiğiniz kullanıcının kullanıcı adını değiştirir.',
     usage: 'isimdeğiştir @kullanıcı <kullanıcı adı>'
 }

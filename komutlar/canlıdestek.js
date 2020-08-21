@@ -69,7 +69,8 @@ const emoji7 = message.client.emojis.get('📞');
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: 0
+  permLevel: 0,
+      kategori: "kullanıcı"
 };
 exports.help = {
   name: 'sor',

@@ -47,7 +47,8 @@ exports.conf =
 {
   enabled: true,
   guildOnly: true,
-  aliases: ["setautorole", "otorol", "otoroldeğiştir"]
+  aliases: ["setautorole", "otorol", "otoroldeğiştir"],
+  kategori: "moderasyon"
 }
 
 exports.help =

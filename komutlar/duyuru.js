@@ -44,7 +44,8 @@ exports.conf = {
     enabled: true,
     guildOnly: true,
     aliases: ['duyuruyap','duyuru-yap'],
-    permLevel: 0
+    permLevel: 0,
+    kategori: "moderasyon"
 }
 
 exports.help = {

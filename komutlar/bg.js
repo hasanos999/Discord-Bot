@@ -102,7 +102,8 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ['1vs1', '1v1', 'savaş'],
-  permLevel: `Yetki gerekmiyor.`
+  permLevel: `Yetki gerekmiyor.`,
+    kategori: "kullanıcı"
 };
 
 exports.help = {

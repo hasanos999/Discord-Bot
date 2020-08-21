@@ -21,7 +21,8 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ['duyur','duyuru'],
-  permLevel: 4
+  permLevel: 4,
+    kategori: "moderasyon"
 };
 
 exports.help = {

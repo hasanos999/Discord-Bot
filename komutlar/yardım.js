@@ -1,31 +1,26 @@
-const Discord = require("discord.js")
-
-exports.run = async(client, message) => {
-	
-	let prefix = '!'
-
-	const codare = new Discord.RichEmbed()
-       .setColor("RANDOM")
-       .setAuthor(`Komutlar`)
-       .setTitle(`Eğlence Komutları`)
-       .setDescription(`!8ball:\nSorduğunuz Soruya Rastgele Cevap Verir. \n\n !adamasmaca:\nAdam Asmaca Oynarsınız.\n\n!canlıyardım:\nCanlı Destek Tablebi Oluşturur.\n\n!emojiyazı:\nMesajınızı emojiye çevirir.\n\n!pp:\nSunucu Resminin Linkini Atar.\n\n!söyle:\nYazdığınız mesajı sesli olarak söyler.\n\n!stersçarkı:\nSizin için bir stres çarkı çevirir.\n\n!yazıtura:\nYazı Tura Oynamanıza Yarar.\n\n!sayıtahmin:\nRastgele rakam belirler ve siz o rakamı bulmaya çalışırsınız.\n\n!myardım:\nMüzik Komutları.`)
-       
-  .setFooter(`Yapımcı @Hasan 14`)
-  return message.channel.send(codare)
-}
-
-
-
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: 0,
-  kategori: `Geliştirici`
-};
-
-exports.help = {
-  name: 'yardım',
-  description: '[Admin Komutu]',
-  usage: '!bakım-mod aç'
-};
+const Discord = require('discord.js')
+let prefix = '!'
+exports.run = async (client, message, keremdesu) => {
+let kategori = keremdesu[0]
+if(!kategori) return message.channel.send('Lütfen bir kategori giriniz. \`{ moderasyon, kullanıcı, müzik }\`');
+if(kategori === 'moderasyon' | kategori === 'kullanıcı' | kategori === 'müzik'){
+let embed = new Discord.RichEmbed()
+   .setAuthor(`${kategori} Komutları`)//keremdesu#0404
+   .setTitle(`Örnek Kullanım: ${prefix}${client.commands.filter(c=>c.conf.kategori===kategori).random().help.name}`)//keremdesu#0404
+   .setDescription(client.commands.filter(c=>c.conf.kategori=== kategori).map(kmt=>kmt.help.name).join('**,\n **'))
+  message.channel.send(embed)
+  } else { message.channel.send('Kategori \`moderasyon, kullanıcı veya müzik\` olmalı!') }};
+  
+  exports.conf = {
+      enabled:true,
+      guildOnly: true,
+      aliases:['help'],
+      permLevel:0,
+    kategori: "kullanıcı"
+  }
+  
+  exports.help = {
+      name:`yardım`,
+    description:`yardım`,
+    usage:`yardım`
+  }

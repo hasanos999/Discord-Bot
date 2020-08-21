@@ -1,61 +1,31 @@
-//ROL AYARLAMA
-
-
-
-const Discord = require('discord.js')
-const fs = require('fs');
-
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const ayarlar = require('../ayarlar.json');
+const prefix = ayarlar.prefix
 
 exports.run = async (client, message, args) => {
-
-  const db = require('quick.db');
-  
-
-  let role = message.mentions.roles.first() || message.guild.roles.find(r => r.name === args.slice(0).join(' '));
-  let prefix = await db.fetch(`prefix_${message.guild.id}`) || client.ayarlar.prefix;
-  
-  
-  
-
-    if(args[0] === 'kapat') {
-   if (db.has(`kayıtR_${message.guild.id}`) === true) {
-     message.channel.send(`Kayıt rolü başarıyla kaldırıldı`)
-     db.delete(`kayıtR_${message.guild.id}`)
-     return
+  if (!message.member.hasPermission("MANAGE_NICKNAMES")) return message.reply(`:warning: Bunu yapabilmek için gerekli yetkiye sahip değilsiniz!`)
+  let isim = args.slice(1).join(' ');
+  let kullanici = message.mentions.users.first();
+  if(!kullanici) return message.reply(`:warning: Lütfen bir kullanıcı giriniz! \nDoğru Kullanım; \`${prefix}isimdeğiştir @${client.user.username}#${client.user.discriminator} <yeni isim>\``).then(msg => msg.delete(5000))
+  if(!isim) return message.reply(`:warning: Lütfen bir kullanıcı adı giriniz! \nDoğru Kullanım; \`${prefix}isimdeğiştir @${client.user.username}#${client.user.discriminator} <yeni isim>\``).then(msg => msg.delete(5000))
+  if(isim.length > 32) return message.reply(`:warning: Lütfen \`32\` karakteri geçmeyecek şekilde bir isim giriniz!`)
+  message.guild.members.get(kullanici.id).setNickname(`${isim}`)
+  message.guild.members.get(kullanici.id).addRole("745886985926737971")
+  message.guild.members.get(kullanici.id).addRole("745887207298039820")
+    message.guild.members.get(kullanici.id).removeRole("745887085113638922")
+  message.channel.send(`:white_check_mark: Başarılı bir şekilde \`${kullanici.username}\` adlı kişinin kullanıcı adı \`${isim}\` olarak değiştirildi.`).then(msg => msg.delete(5000))
 }
-  message.channel.send(`kayıt rolü ayarlanmamış.`)
-    return
-  
-  }
-
-  
-  
-    if (!role) {
-        return message.reply(`Lütfen bir rol etiketleyin veya rol adını yazın örnek: **${prefix}kayıtrol @rol** veya **${prefix}kayıtrol rol-adı** `)
-    }
-
-  
-     db.set(`kayıtR_${message.guild.id}`, role.id)
-  
-    const embed = new Discord.RichEmbed()
-    .setDescription(` Kayıt rolü başarıyla ayarlandı: **${role.name}**\nKayıt rolünü kapatmak isterseniz **${prefix}kayıtrol kapat** yazmanız yeterlidir.`)
-    .setColor("RANDOM")
-    message.channel.send({embed})
-  
-};
-
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['kayıt-rol', 'kayıt-rol-belirle'],
-    permLevel: 4,
-    kategori: "ayarlar",
+    aliases: ['isimdegistir'],
+    permLevel: 0,
+    kategori: "modrasyon"
 }
 
 exports.help = {
-    name: 'kayıtrol',
-    description: 'Kayıt olunca verilecek rolü ayarlar.',
-    usage: 'kayıtrol <@rol> \ rol-adı',
+    name: 'pvkayıt',
+    description: 'Belirttiğiniz kullanıcının kullanıcı adını değiştirir.',
+    usage: 'isimdeğiştir @kullanıcı <kullanıcı adı>'
 }
-
-

@@ -31,7 +31,8 @@ module.exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ["kizle","kanalwatch","channelwatch"],
-  permLevel: 0
+  permLevel: 0,
+    kategori: "moderasyon"
 };
 
 module.exports.help = {
