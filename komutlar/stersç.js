@@ -33,7 +33,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: '**!stresçarkı** ,', 
+  name: '**!StresÇarkı** ,', 
   description: 'Sizin için bir stres çarkı çevirir.',
   usage: 'stresçarkı'
 };

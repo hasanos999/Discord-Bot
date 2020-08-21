@@ -24,7 +24,7 @@ exports.conf = {
   kategori: "Kullanıcı"
 };
 exports.help = {
-    name: '**!söyle** ,',
+    name: '**!Söyle** ,',
     description: 'Bota yazdığınız şeyi sesli mesaj olarak söyletir',
     usage: 'söyle <mesaj>'
 };

@@ -30,7 +30,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: '**!sunucupp** ,',
+  name: '**!SunucuPP** ,',
   description: 'Sunucu Resminin Linkini Atar.',
   usage: 'sunucuresmi'
 };

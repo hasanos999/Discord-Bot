@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
 				`);
            let uwu = false;
             while (!uwu && haklar !== 0) {
-                const response = await message.channel.awaitMessages(neblm => neblm.author.id === message.author.id, { max: 1, time: 10000 });
+                const response = await message.channel.awaitMessages(neblm => neblm.author.id === message.author.id, { max: 10, time: 1000 });
               if(!response.first()) { 
                 this.games.delete(message.channel.id);
                 message.channel.send(`${message.author}, Maalesef! Zaman doldu!`)
@@ -71,7 +71,7 @@ exports.conf = {
   kategori: "Kullanıcı"
 };
 exports.help = {
-    name: '**!sayıtahmin** ,',
+    name: '**!SayıTahmin** ,',
   description: 'Rastgele rakam belirler ve siz o rakamı bulmaya çalışırsınız.',
   usage: 'sayı-tahmin'
 };
