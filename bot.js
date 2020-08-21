@@ -850,25 +850,7 @@ client.on("messageUpdate", (old, nev) => {
    
 //
 
-client.on("message", msg => {
-  let küfürEngel = db.fetch(`ke_${msg.guild.id}`)
-  if (!msg.guild) return
-  if (küfürEngel === 'kapali') return
-    if (küfürEngel === 'acik') {
-   
-    var request = require('request');
-request(`https://pingapi.glitch.me/api/kufur?apikey=pingwashere`, function (error, response, body) {
-    if (error) return console.log('Hata:', error);
-    else if (!error) {
-        var veri = JSON.parse(body);
-      if (veri.kelimeler.some(word => msg.content.toLowerCase().includes(word)) ) {
-    if (!msg.member.hasPermission("ADMINISTRATOR")) {
-      msg.delete()
-       msg.channel.send(new Discord.RichEmbed().setColor('#000000').setDescription('Küfür yakışıyor mu sana?')).then(message => message.delete(3000));
-    
-    }}
-    }
-})}});
+
 
 //
 
@@ -946,44 +928,3 @@ client.on("guildMemberAdd", async member => {
 
 
 
-client.on("message", async msg => {
-  
-  
- const i = await db.fetch(`${msg.guild.id}.kufur`)
-    if (i) {
-        const kufur = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "mal", "sik", "yarrak", "am", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "ak", "amq",];
-        if (kufur.some(word => msg.content.includes(word))) {
-          try {
-            if (!msg.member.hasPermission("BAN_MEMBERS")) {
-                  msg.delete();
-                          
-                      return msg.reply('Bu Sunucuda Küfür Filtresi Aktiftir.').then(msg => msg.delete(3000));
-            }              
-          } catch(err) {
-            console.log(err);
-          }
-        }
-    }
-    if (!i) return;
-});
-
-client.on("messageUpdate", (oldMessage, newMessage) => {
-  
-  
- const i = db.fetch(`${newMessage.guild.id}.kufur`)
-    if (i) {
-        const kufur = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "mal", "sik", "yarrak", "am", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "ak", "amq",];
-        if (kufur.some(word => newMessage.content.includes(word))) {
-          try {
-            if (!newMessage.member.hasPermission("BAN_MEMBERS")) {
-                  newMessage.delete();
-                          
-                      return newMessage.reply('Bu Sunucuda Küfür Filtresi Aktiftir.').then(msg => msg.delete(3000));
-            }              
-          } catch(err) {
-            console.log(err);
-          }
-        }
-    }
-    if (!i) return;
-});
