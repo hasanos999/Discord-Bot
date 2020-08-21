@@ -944,18 +944,20 @@ client.on("guildMemberAdd", async member => {
    
 //
 
+
+
 client.on("message", async msg => {
   
   
- const i = await db.fetch(`kufur_${msg.guild.id}`)
-    if (i == "acik") {
+ const i = await db.fetch(`${msg.guild.id}.kufur`)
+    if (i) {
         const kufur = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "mal", "sik", "yarrak", "am", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "ak", "amq",];
         if (kufur.some(word => msg.content.includes(word))) {
           try {
             if (!msg.member.hasPermission("BAN_MEMBERS")) {
                   msg.delete();
                           
-                      return msg.reply('Bu Sunucuda Küfür Filtresi Aktiftir.')
+                      return msg.reply('Bu Sunucuda Küfür Filtresi Aktiftir.').then(msg => msg.delete(3000));
             }              
           } catch(err) {
             console.log(err);
@@ -968,15 +970,15 @@ client.on("message", async msg => {
 client.on("messageUpdate", (oldMessage, newMessage) => {
   
   
- const i = db.fetch(`${oldMessage.guild.id}.kufur`)
+ const i = db.fetch(`${newMessage.guild.id}.kufur`)
     if (i) {
         const kufur = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "mal", "sik", "yarrak", "am", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "ak", "amq",];
         if (kufur.some(word => newMessage.content.includes(word))) {
           try {
-            if (!oldMessage.member.hasPermission("BAN_MEMBERS")) {
-                  oldMessage.delete();
+            if (!newMessage.member.hasPermission("BAN_MEMBERS")) {
+                  newMessage.delete();
                           
-                      return oldMessage.reply('Bu Sunucuda Küfür Filtresi Aktiftir.')
+                      return newMessage.reply('Bu Sunucuda Küfür Filtresi Aktiftir.').then(msg => msg.delete(3000));
             }              
           } catch(err) {
             console.log(err);
@@ -985,6 +987,3 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
     }
     if (!i) return;
 });
-
-//
-

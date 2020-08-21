@@ -3,12 +3,12 @@ const db = require('quick.db')
 
 exports.run = async (client ,message, args) =>{
 if(args[0] === 'aktif') {
-    db.set(`kufur_${message.guild.id}`, "acik")
+    db.set(`${message.guild.id}.kufur`, true)
     message.channel.send('Başarılı Şekilde `Aktif` Edildi.')
   return
 }
 if (args[0] === 'deaktif') {
-  db.delete(`kufur_${message.guild.id}`)
+  db.delete(`${message.guild.id}.kufur`)
 message.channel.send('Başarılı Şekilde `Deaktif` Edildi')
 return
 }
