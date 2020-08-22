@@ -12,11 +12,11 @@ exports.run = (client, message, args) => {
 	.setThumbnail('https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FraccoonHead.png?v=1598031841290')
 
 
-	.addField('\nYetkililer:', '**Mekktile**\n(Kurucu)\n\n**MiniAnn**\n(Moderatör)\n\n**YT_Eren**\n(Moderatör)\n\n**EndlessSpear**\n(Moderatör)\n\n**minesaus**\n(Moderatör)\n\n**missyhypnst**\n(Moderatör)\n\n**kocmar333**\n(Moderatör)\n\n**pufuu**\n(Moderatör)\n\n**Retuhn**\n(Moderatör)', true)
-  .addField('deneme','d', true)
+	.addField('\nYetkililer:', '**Mekktile**\n(Kurucu)', true)
+  .addField('Yetkililer','\n**MiniAnn**\n(Moderatör)\n**YT_Eren**\n(Moderatör)\n**EndlessSpear**\n(Moderatör)\n**minesaus**\n(Moderatör)\n**missyhypnst**\n(Moderatör)\n**kocmar333**\n(Moderatör)\n**pufuu**\n(Moderatör)\n**Retuhn**\n(Moderatör)', true)
 	.setImage('https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FraccoonHead.png?v=1598031841290')
 	.setTimestamp()
-	.setFooter('Some footer text here', 'https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FPeeVed.jpg?v=1598077756090');
+	.setFooter('PeeVed', 'https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FPeeVed.jpg?v=1598077756090');
 
 message.channel.send(Mesaj)
 }
@@ -24,10 +24,13 @@ message.channel.send(Mesaj)
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['embed', 'embedyazı'],
-  permLevel: 0
+  aliases: ['bilgi'],
+  permLevel: 0,
+  kategori: "kullanıcı"
+  
 }
 
 exports.help = {
-  name: 'embedyaz'
+  name: '**!bilgi** ,'
+
 }
