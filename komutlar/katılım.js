@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const { RichEmbed } = require('discord.js')
 exports.run = (client, message, args) => {
+  
+  
 
   let yazıİçeriği = args.slice().join(' ')
   const Mesaj = new RichEmbed()
@@ -13,7 +15,7 @@ exports.run = (client, message, args) => {
 
 	.addField('\nYetkililer:', '**Mekktile** (Kurucu)\n**MiniAnn** (Moderatör)\n**YT_Eren** (Moderatör)\n**EndlessSpear** (Moderatör)\n**minesaus** (Moderatör)\n**missyhypnst** (Moderatör)\n**kocmar333** (Moderatör)\n**pufuu** (Moderatör)\n**Retuhn** (Moderatör)', true)
   .addField('|' , '**|**\n**|**\n**|**\n**|**\n**|**\n**|**\n**|**\n**|**\n**|**', true)
-  .addField('Loncadaki Kullanıcı Sayısı: ' , '37 \n\n**Discorddaki Kullanıcı Sayısı:**\nözel kod\n\n**Aktif Yetkili Sayısı:**\nkod', true)
+  .addField('Loncadaki Kullanıcı Sayısı: ' , '37 \n\n**Discorddaki Kullanıcı Sayısı:**\nözel kod\n\n**Aktif Yetkili Sayısı:**\n1', true)
 	.setTimestamp()
 	.setFooter('PeeVed', 'https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FPeeVed.jpg?v=1598077756090');
 
