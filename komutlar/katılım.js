@@ -12,8 +12,8 @@ exports.run = (client, message, args) => {
 	.setThumbnail('https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FraccoonHead.png?v=1598031841290')
 
 
-	.addField('\nYetkililer:', '**Mekktile**\n(Kurucu)\n**MiniAnn**\n(Moderatör)\n**YT_Eren**\n(Moderatör)\n**EndlessSpear**\n(Moderatör)\n**minesaus**\n(Moderatör)\n**missyhypnst**\n(Moderatör)\n**kocmar333**\n(Moderatör)\n**pufuu**\n(Moderatör)\n**Retuhn**\n(Moderatör)', true)
-  .addField('Kurallar:','Bu Kurallar Discord Ve Oyun İçinde Geçerlidir\n1-**Spam**,**Flood**,**Harf Uzatmak** yasak\n', true)
+	.addField('\nYetkililer:', '**Mekktile**\n(Kurucu)', true)
+  .addField('Yetkililer:','\n**MiniAnn**\n(Moderatör)\n**YT_Eren**\n(Moderatör)\n**EndlessSpear**\n(Moderatör)\n**minesaus**\n(Moderatör)\n**missyhypnst**\n(Moderatör)\n**kocmar333**\n(Moderatör)\n**pufuu**\n(Moderatör)\n**Retuhn**\n(Moderatör)', true)
 	.setImage('https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FraccoonHead.png?v=1598031841290')
 	.setTimestamp()
 	.setFooter('PeeVed', 'https://cdn.glitch.com/9e3a1417-6901-4041-baf5-d8644c0da566%2FPeeVed.jpg?v=1598077756090');
