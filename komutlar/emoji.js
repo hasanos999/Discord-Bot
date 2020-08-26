@@ -48,7 +48,7 @@ exports.conf = {
   guildOnly: false,
   aliases: ["emojiyazı"],
   permLevel: 0,
-    kategori: "kullanıcı"
+    kategori: ""
 };
 
 exports.help = {

@@ -8,7 +8,7 @@ exports.run = (bot, message, args, tools) => {
     let split = '|';
 
     if(!args[0]) {
-        return message.channel.send("**Duyuru Yapabilmen İçin Bir Mesaj Belirtmen Gerek.** `!duyuru <mesajınız>`");
+        return message.channel.send("Duyuru Yapabilmen İçin Bir Mesaj Belirtmen Gerek.** !duyuru <mesajınız>**");
     }
 
     args = args.join(' ').split(split);
