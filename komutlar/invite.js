@@ -21,7 +21,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'davetoluştur',
+  name: 'davet',
   description: 'davet oluşturur',
   usage: '.davetoluştur'
 };
