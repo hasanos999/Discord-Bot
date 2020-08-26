@@ -928,3 +928,157 @@ client.on("guildMemberAdd", async member => {
 
 
 
+// EVERYONE VE HERE \\
+let ehengel = JSON.parse(
+  fs.readFileSync("./ayarlar/everhereengel.json", "utf8")
+);
+client.on("message", async function(msg) {
+  if (!msg.guild) {
+  } else {
+    if (!ehengel[msg.guild.id]) {
+    } else {
+      if (ehengel[msg.guild.id].sistem == false) {
+      } else if (ehengel[msg.guild.id].sistem == true) {
+        if (msg.member.roles.find("name", "EVERYONE VE HERE ATMASINI ISTEDIGINIZ ROL ADI")) {
+        } else {
+          if (msg.content.includes("@everyone")) {
+            msg.delete();
+            msg
+              .reply("maalesef `everyone` atmana izin veremem!")
+              .then(msj => msj.delete(3200));
+          } else {
+          }
+          if (msg.content.includes("@here")) {
+            msg.delete();
+            msg
+              .reply("maalesef `here` atmana izin veremem!")
+              .then(msj => msj.delete(3200));
+          } else {
+          }
+        }
+      }
+    }
+  }
+});
+// EVERYONE VE HERE \\
+
+// CAPSLOCK \\
+
+    client.on("message", async msg => {
+    if (msg.channel.type === "dm") return;
+      if(msg.author.bot) return;  
+        if (msg.content.length > 4) {
+         if (db.fetch(`capslock_${msg.guild.id}`)) {
+           let caps = msg.content.toUpperCase()
+           if (msg.content == caps) {
+             if (!msg.member.hasPermission("ADMINISTRATOR")) {
+               if (!msg.mentions.users.first()) {
+                 msg.delete()
+                 return msg.channel.send(`✋ ${msg.author}, Bu sunucuda, büyük harf kullanımı engellenmekte!`).then(m => m.delete(5000))
+     }
+       }
+     }
+   }
+  }
+});
+
+// CAPSLOCK
+
+// BOT DM LOG \\
+client.on("message", message => {
+    const dmchannel = client.channels.find("name", "BOT DM LOG KANAL ADI");
+    if (message.channel.type === "dm") {
+        if (message.author.bot) return;
+        dmchannel.sendMessage("", {embed: {
+            color: 3447003,
+            title: `Gönderen: ${message.author.tag}`,
+            description: `Bota Özelden Gönderilen DM: ${message.content}`
+        }})
+    }
+});
+// BOT DM LOG \\
+
+// REKLAM \\
+client.on("message", async message => {
+    if (message.member.roles.find("name", "REKLAM ATMASINA IZIN VERILEN ROL ADI")) return;
+    let links = message.content.match(/(http[s]?:\/\/)(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/gi);
+    if (!links) return;
+    if (message.deletable) message.delete();
+    message.channel.send(`Hey ${message.author}, sunucuda link paylaşamazsın!`)
+})
+// REKLAM \\
+
+// ROL KORUMA \\
+client.on('roleDelete', async function(role) {
+  const fetch = await role.guild.fetchAuditLogs({type: "ROLE_DELETE"}).then(log => log.entries.first())
+  let yapanad = fetch.executor;
+  let isim = role.name;
+  let renk = role.color;
+  let ayrı = role.hoist;
+  let sıra = role.position;
+  let yetkiler = role.permissions;
+  let etiketlenebilir = role.mentionable;
+  role.guild.createRole({
+    name:isim,
+    color:renk,
+    hoist:ayrı,
+    position:sıra,
+    permissions:yetkiler,
+    mentionable:etiketlenebilir
+  })
+  let teqnoembed = new Discord.RichEmbed()
+    .setTitle("Uyarı")
+    .setColor("RED")
+    .setFooter("BURAYA ACIKLAMA YAZIN KISA")
+    .setDescription(`\`${role.guild.name}\` adlı sunucunuzda ${isim} adına sahip rol, ${yapanad} adlı kişi tarafından silindi. Ben tekrardan onardım!`)
+  role.guild.owner.send(teqnoembed)
+});
+// ROL KORUMA \\
+
+// KANAL KORUMA \\
+client.on("channelDelete", async channel => {
+  if(!channel.guild.me.hasPermission("MANAGE_CHANNELS")) return;
+  let guild = channel.guild;
+  const logs = await channel.guild.fetchAuditLogs({ type: 'CHANNEL_DELETE' })
+  let member = guild.members.get(logs.entries.first().executor.id);
+  if(!member) return;
+  if(member.hasPermission("ADMINISTRATOR")) return;
+  channel.clone(channel.name, true, true, "Kanal silme koruması sistemi").then(async klon => {
+    if(!db.has(`korumalog_${guild.id}`)) return;
+    let logs = guild.channels.find(ch => ch.id === db.fetch(`korumalog_${guild.id}`));
+    if(!logs) return db.delete(`korumalog_${guild.id}`); else {
+      const embed = new Discord.RichEmbed()
+      .setDescription(`Silinen Kanal: <#${klon.id}> (Yeniden oluşturuldu!)\nSilen Kişi: ${member.user}`)
+      .setColor('RED')
+      .setAuthor(member.user.tag, member.user.displayAvatarURL)
+      logs.send(embed);
+    }
+    await klon.setParent(channel.parent);
+    await klon.setPosition(channel.position);
+  })
+})
+// KANAL KORUMA \\
+
+// BAN LİMİT \\
+client.on("guildBanAdd", async(guild, user) => {
+   if(guild.id !== "SAHIP ID") return; //ID kısmına sunucu ID'nizi giriniz.
+const banlayan = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'}).then(audit => audit.entries.first())
+let banlayancek = guild.members.get(banlayan.exucutor.id)
+if(banlayancek.bot) return;    
+    
+ let banlar = await db.fetch(`banlayaninbanlari_${banlayancek.id}`)    
+ if(!banlar) {
+   db.set(`banlayaninbanlari_${banlayancek.id}`, 1)
+ return;
+ }
+  
+let limit = "3" // 3 kısmına ban limitinin kaç olmasını istiyorsanız yazınız.
+  if(banlar >= limit) {
+guild.member.kick(user,{reason: "CODE, Atıldınız. (Ban limitinizi aştınız.)"})    
+db.delete(`banlayaninbanlari_${banlayancek.id}`)
+return;      
+  } 
+
+ db.add(`banlayaninbanlari_${banlayancek.id}`, 1)
+    })
+// BAN LİMİT \\
