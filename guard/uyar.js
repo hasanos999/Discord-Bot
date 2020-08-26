@@ -7,8 +7,8 @@ exports.run = async(client, message, args) => {
   .setColor("RANDOM")
   .setAuthor(`Bu Komutu Kullanmak İçin Yeterli İzine Sahip Değilsin`, message.author.avatarURL)
   
-    if (!message.member.roles.find("name", "BU KOMUTU KULLANACAK YETKILI ROL ADI")) {
-        return message.channel.send(' **Bu Komutu Kullanmak için** \*`BU KOMUTU KULLANACAK YETKILI ROL ADI*\` **Rolüne Sahip Olman Lazım** ')
+    if (!message.member.roles.find("name", "Yetkili")) {
+        return message.channel.send(' **Bu Komutu Kullanmak için** \*`Yetkili*\` **Rolüne Sahip Olman Lazım** ')
             .then(m => m.delete(5000));
     } 
   
@@ -31,7 +31,7 @@ exports.run = async(client, message, args) => {
   
   message.channel.send(tamamdir)
   
-  let modlogkanal = message.guild.channels.find(channel => channel.name === "UYARI LOG KANALINIZIN İSMİ")
+  let modlogkanal = message.guild.channels.find(channel => channel.name === "log")
   
   if (!modlogkanal) return;
   

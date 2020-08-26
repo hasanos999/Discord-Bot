@@ -3,8 +3,8 @@ const ms = require("ms");
 
 module.exports.run = async (client, message, args) => {
 
-    if (!message.member.roles.find("name", "BU KOMUTU KULLANACAK YETKILI ROL ADI")) {
-        return message.channel.send(' **Bu Komutu Kullanmak için** \*`BU KOMUTU KULLANACAK YETKILI ROL ADI*\` **Rolüne Sahip Olman Lazım** ')
+    if (!message.member.roles.find("name", "Yetkili")) {
+        return message.channel.send(' **Bu Komutu Kullanmak için** \*`Yetkili*\` **Rolüne Sahip Olman Lazım** ')
             .then(m => m.delete(5000));
     } 
  let efeÜye = message.mentions.members.first() || message.guild.members.get(args[0])
@@ -32,9 +32,9 @@ module.exports.run = async (client, message, args) => {
   }
 
   let efeZaman = args[1];
-  if(!efeZaman) return message.channel.send("Lütfen doğru bir zaman dilimi giriniz. Örneğin: ***!chatmute @kişi 1s/m/h/d sebep**");
+  if(!efeZaman) return message.channel.send("Lütfen doğru bir zaman dilimi giriniz. Örneğin: ***!sustur @kişi 1s/m/h/d sebep**");
   let sebep = args[2]
-  if(!sebep) return message.channel.send("Lütfen bir sebep giriniz. Örneğin: ***!chatmute @kişi 1s/m/h/d sebep**");
+  if(!sebep) return message.channel.send("Lütfen bir sebep giriniz. Örneğin: ***!sustur @kişi 1s/m/h/d sebep**");
 
   await(efeÜye.addRole(efeRol.id));
    let embed = new Discord.RichEmbed()

@@ -3,8 +3,8 @@ const ms = require("ms");
 
 module.exports.run = (client, message, args) => {
   
-    if (!message.member.roles.find("name", "BU KOMUTU KULLANACAK YETKILI ROL ADI")) {
-        return message.channel.send(' **Bu Komutu Kullanmak için** \*`BU KOMUTU KULLANACAK YETKILI ROL ADI*\` **Rolüne Sahip Olman Lazım** ')
+    if (!message.member.roles.find("name", "Yetkili")) {
+        return message.channel.send(' **Bu Komutu Kullanmak için** \*`Yetkili*\` **Rolüne Sahip Olman Lazım** ')
             .then(m => m.delete(5000));
     }
 let kullanici = message.mentions.members.first() || message.guild.members.get(args[0])

@@ -939,7 +939,7 @@ client.on("message", async function(msg) {
     } else {
       if (ehengel[msg.guild.id].sistem == false) {
       } else if (ehengel[msg.guild.id].sistem == true) {
-        if (msg.member.roles.find("name", "EVERYONE VE HERE ATMASINI ISTEDIGINIZ ROL ADI")) {
+        if (msg.member.roles.find("name", "Yetkili")) {
         } else {
           if (msg.content.includes("@everyone")) {
             msg.delete();
@@ -962,31 +962,11 @@ client.on("message", async function(msg) {
 });
 // EVERYONE VE HERE \\
 
-// CAPSLOCK \\
 
-    client.on("message", async msg => {
-    if (msg.channel.type === "dm") return;
-      if(msg.author.bot) return;  
-        if (msg.content.length > 4) {
-         if (db.fetch(`capslock_${msg.guild.id}`)) {
-           let caps = msg.content.toUpperCase()
-           if (msg.content == caps) {
-             if (!msg.member.hasPermission("ADMINISTRATOR")) {
-               if (!msg.mentions.users.first()) {
-                 msg.delete()
-                 return msg.channel.send(`✋ ${msg.author}, Bu sunucuda, büyük harf kullanımı engellenmekte!`).then(m => m.delete(5000))
-     }
-       }
-     }
-   }
-  }
-});
-
-// CAPSLOCK
 
 // BOT DM LOG \\
 client.on("message", message => {
-    const dmchannel = client.channels.find("name", "BOT DM LOG KANAL ADI");
+    const dmchannel = client.channels.find("name", "log");
     if (message.channel.type === "dm") {
         if (message.author.bot) return;
         dmchannel.sendMessage("", {embed: {
@@ -1061,7 +1041,7 @@ client.on("channelDelete", async channel => {
 
 // BAN LİMİT \\
 client.on("guildBanAdd", async(guild, user) => {
-   if(guild.id !== "SAHIP ID") return; //ID kısmına sunucu ID'nizi giriniz.
+   if(guild.id !== "740530417450483712") return; //ID kısmına sunucu ID'nizi giriniz.
 const banlayan = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'}).then(audit => audit.entries.first())
 let banlayancek = guild.members.get(banlayan.exucutor.id)
 if(banlayancek.bot) return;    
